@@ -57,17 +57,17 @@ Copy code
 2. Initialize Twig in index.php:
   require_once __DIR__ . '/vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '');
-$twig = new \Twig\Environment($loader);
+  $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '');
+  $twig = new \Twig\Environment($loader);
 
 3.Load JSON data and render the template:
 
-$widgetData1 = json_decode(file_get_contents(__DIR__ . '/jsons/summary.json'), true);
+  $widgetData1 = json_decode(file_get_contents(__DIR__ . '/jsons/summary.json'), true);
 
-echo $twig->render('template.php', [
-    'widgetData1' => $widgetData1,
-    // Add other widget data as needed
-]);
+    echo $twig->render('template.php', [
+        'widgetData1' => $widgetData1,
+        // Add other widget data as needed
+    ]);
 
 4. Run the server php -S localhost:8000
 5. php -S localhost:8000/index.php
