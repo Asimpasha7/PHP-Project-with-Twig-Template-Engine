@@ -40,7 +40,7 @@ Follow the steps below to set up and run the project.
 
 2. Change into the project directory:
 
-   cd <project-directory>
+   cd project-directory
 
 
 Usage
@@ -64,7 +64,6 @@ $twig = new \Twig\Environment($loader);
 
 $widgetData1 = json_decode(file_get_contents(__DIR__ . '/jsons/summary.json'), true);
 
-// Render template with dynamic data
 echo $twig->render('template.php', [
     'widgetData1' => $widgetData1,
     // Add other widget data as needed
