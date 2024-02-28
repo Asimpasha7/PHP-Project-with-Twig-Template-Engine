@@ -1302,6 +1302,7 @@
                                                     </div>
                                                 </div>
 
+                                                <!-- Summary -->
                                                 <div class="col-md-12 col-xl-4">
                                                     {% for item in widgetData1.summary %}
                                                         <div class="card comp-card">
@@ -1309,7 +1310,13 @@
                                                                 <div class="row align-items-center">
                                                                     <div class="col">
                                                                         <h6 class="m-b-25">{{ item.title }}</h6>
-                                                                        <h3 class="f-w-700 text-c-blue">{{ item.value }}</h3>
+                                                                        {% if item.title == "Impressions" %}
+                                                                            <h3 class="f-w-700 text-c-blue">{{ item.value }}</h3>
+                                                                        {% elseif item.title == "Goal" %}
+                                                                            <h3 class="f-w-700 text-c-green">{{ item.value }}</h3>
+                                                                        {% elseif item.title == "Impact" %}
+                                                                            <h3 class="f-w-700 text-c-yellow">{{ item.value }}</h3>
+                                                                        {% endif %}
                                                                         <p class="m-b-0">{{ item.duration }} ({{ item.year }})</p>
                                                                     </div>
                                                                     <div class="col-auto">
@@ -1326,6 +1333,7 @@
                                                         </div>
                                                     {% endfor %}
                                                 </div>
+
 
                                                 <!-- Published Project -->
                                                 <div class="col-xl-12">
@@ -1346,6 +1354,7 @@
                                                     </div>
                                                 </div>
 
+                                                <!--  Sales -->
                                                 <div class="col-md-12 col-xl-4">
                                                     <div class="card card-blue text-white">
                                                         <div class="card-block p-b-0">
@@ -1447,7 +1456,7 @@
                                                                                 <div class="col-auto text-right update-meta p-r-0">
                                                                                     {% if 'Your Manager Posted.' in item.message %}
                                                                                         <!-- <i class="feather icon-check f-w-600 bg-c-green update-icon"></i> -->
-                                                                                        <img src="./template_files/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15 update-icon" />
+                                                                                    <img src="./template_files/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15 update-icon" />
 
                                                                                     {% elseif 'You have 3 pending Task.' in item.message %}
                                                                                         <i class="feather icon-briefcase bg-c-red update-icon"></i>
